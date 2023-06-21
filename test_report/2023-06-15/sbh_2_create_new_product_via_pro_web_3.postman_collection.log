@@ -1,0 +1,177 @@
+newman
+
+sbh_2_create_new_product_via_pro_web_3
+
+❏ Auth
+↳ request_generate_otp
+  ┌
+  │ '--- Start Testsuite 2 ---'
+  │ 'platform: stapp'
+  │ 'device_id: DVyTHw7B-igaM-TNPs-rFhE-hjVCKwxjtvoC'
+  │ 'secret_key: RWuqeEGKCvXKoV9x6rSZv8O9R739yVEVTgOeymHb'
+  └
+  POST http://dev-api.finan.cc/finan-user/api/v1/auth/otp/generate [200 OK, 457B, 509ms]
+  ✓  Status code is 200
+
+Attempting to set next request to get_user_token_via_otp
+
+↳ get_user_token_via_otp
+  POST http://dev-api.finan.cc/finan-user/api/v1/auth/otp/confirm [200 OK, 4.02kB, 323ms]
+  ✓  Status code is 200
+  ┌
+  │ 'userToken:', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.ey
+  │ JkZXZpY2VfaWQiOiJEVnlUSHc3Qi1pZ2FNLVROUHMtckZoRS1oalZD
+  │ S3d4anR2b0MiLCJidXNpbmVzc19pZCI6ImI1Zjg0ODZmLTU3NmUtNG
+  │ JmMy04NmZiLTM5OGQyNmVjZjNjOCIsInBlcm1pc3Npb25fa2V5cyI6
+  │ InNob3Bfb3duZXIiLCJyZWZyZXNoX3Rva2VuX2lkIjoiYzk3NTQ4N2
+  │ ItNGIxZi00NzExLThiZDQtZTI3MWFhYWY5MjE1Iiwic2VjdXJpdHlf
+  │ cm9sZXMiOjAsImFwcF92ZXJzaW9uIjoiIiwidXNlcl9pZCI6IjA1NT
+  │ E2YjBiLTZkMDgtNGFlNy05YzE4LWI4ZGI2YWJmNGMwYSIsImV4cCI6
+  │ MTY4OTM4OTU4NywiaXNzIjoiZ3RhcHAiLCJzdWIiOiIwNTUxNmIwYi
+  │ 02ZDA4LTRhZTctOWMxOC1iOGRiNmFiZjRjMGF8RFZ5VEh3N0ItaWdh
+  │ TS1UTlBzLXJGaEUtaGpWQ0t3eGp0dm9DfERWeVRIdzdCLWlnYU0tVE
+  │ 5Qcy1yRmhFLWhqVkNLd3hqdHZvQyJ9.zgC--dexfLwjEQtG0jiI1Xd
+  │ wl3qUkFL6Pfq6avp9UQ4'
+  │ 'userRefreshToken:', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpX
+  │ VCJ9.eyJkaWQiOiJEVnlUSHc3Qi1pZ2FNLVROUHMtckZoRS1oalZDS
+  │ 3d4anR2b0MiLCJidXNpbmVzc19pZCI6ImI1Zjg0ODZmLTU3NmUtNGJ
+  │ mMy04NmZiLTM5OGQyNmVjZjNjOCIsInBlcm1pc3Npb25fa2V5cyI6I
+  │ nNob3Bfb3duZXIiLCJzZWN1cml0eV9yb2xlcyI6MCwicGxhdGZvcm1
+  │ fa2V5Ijoic3RhcHAiLCJleHAiOjE3MDIzNDk1ODcsImlhdCI6MTY4N
+  │ jc5NzU4NywiaXNzIjoic3RhcHAiLCJzdWIiOiIwNTUxNmIwYi02ZDA
+  │ 4LTRhZTctOWMxOC1iOGRiNmFiZjRjMGEifQ.-LG4_G3YrL8_GBFRdi
+  │ iGNUJ_b1wDFU9W2mEnrTPUpo8'
+  │ 'userInfo:', '{"role_name":"Chủ cửa hàng","is_owner":t
+  │ rue,"user_name":"+84907470430","business_id":"b5f8486f
+  │ -576e-4bf3-86fb-398d26ecf3c8"}'
+  └
+
+Attempting to set next request to view_list_products
+
+❏ Product - Seller
+↳ view_list_products
+  GET http://dev-api.finan.cc/finan-product/api/v1/product/online/get-list?business_id=b5f8486f-576e-4bf3-86fb-398d26ecf3c8&page=1&page_size=10&sort&name&category_ids [200 OK, 27.41kB, 166ms]
+  ✓  Status code is 200
+  ┌
+  │ 'Total products: 70'
+  └
+
+Attempting to set next request to create_new_product
+
+↳ create_new_product
+  POST http://dev-api.finan.cc/finan-product/api/v1/product/create [200 OK, 2.25kB, 308ms]
+  ✓  Status code is 200
+  ┌
+  │ 'Expected product name: CL - Sản Phẩm KN68LbaNHk'
+  │ 'Actual product name: CL - Sản Phẩm KN68LbaNHk'
+  └
+  ✓  Product name is correctly!!!
+  ✓  Got product_id!!!
+  ┌
+  │ 'Expected min_price: 17000'
+  │ 'Actual min_price: 17000'
+  └
+  ✓  min_price is correctly!!!
+  ┌
+  │ 'Expected max_price: 75000'
+  │ 'Actual max_price: 75000'
+  └
+  ✓  max_price is correctly!!!
+  ┌
+  │ 'Expected count_variant: 2'
+  │ 'Actual count_variant: 2'
+  └
+  ✓  count_variant is correctly!!!
+  ┌
+  │ 'new productObj: {"business_id":"b5f8486f-576e-4bf3-86
+  │ fb-398d26ecf3c8","list_sku":[{"attribute_types":[{"att
+  │ ribute":"Lớn","attribute_type":"Size"}],"barcode":"","
+  │ business_id":"b5f8486f-576e-4bf3-86fb-398d26ecf3c8","h
+  │ ide_sku":false,"historical_cost":6000,"id":"c1fdeb6c-0
+  │ b27-11ee-8270-727bc0c1814f","is_active":true,"media":[
+  │ ],"name":"Lớn","normal_price":17000,"number_attribute_
+  │ type":0,"po_details":{"blocked_quantity":0,"delivering
+  │ _quantity":0,"note":"","pricing":6000,"quantity":12,"w
+  │ arning_value":0},"priority":1,"product_id":null,"range
+  │ _wholesale_price":[],"selling_price":0,"sku_code":"SP0
+  │ 071-10","sku_type":"stock","total_quantity":0,"uom":""
+  │ ,"wholesale_price":0},{"attribute_types":[{"attribute"
+  │ :"Nhỏ","attribute_type":"Size"}],"barcode":"","busines
+  │ s_id":"b5f8486f-576e-4bf3-86fb-398d26ecf3c8","hide_sku
+  │ ":false,"historical_cost":64000,"id":"c1fe5b76-0b27-11
+  │ ee-8270-727bc0c1814f","is_active":true,"media":[],"nam
+  │ e":"Nhỏ","normal_price":75000,"number_attribute_type":
+  │ 0,"po_details":{"blocked_quantity":0,"delivering_quant
+  │ ity":0,"note":"","pricing":64000,"quantity":16,"warnin
+  │ g_value":0},"priority":2,"product_id":null,"range_whol
+  │ esale_price":[],"selling_price":0,"sku_code":"SP0071-1
+  │ 1","sku_type":"stock","total_quantity":0,"uom":"","who
+  │ lesale_price":0}],"list_variant":[{"name":"Size","list
+  │ _attribute":[{"name":"Lớn"},{"name":"Nhỏ"}]}],"name":"
+  │ CL - Sản Phẩm KN68LbaNHk","uom":"Lon","minPrice":17000
+  │ ,"maxPrice":75000,"product_code":"SP0071","product_id"
+  │ :"13aa1333-ec04-4534-a9f7-e4840087bb4f"}'
+  └
+
+Attempting to set next request to check_list_products
+
+↳ check_list_products
+  GET http://dev-api.finan.cc/finan-product/api/v1/product/online/get-list?business_id=b5f8486f-576e-4bf3-86fb-398d26ecf3c8&page=1&page_size=10&sort=priority desc&name&category_ids [200 OK, 26.85kB, 195ms]
+  ✓  Status code is 200
+  ┌
+  │ 'Expected total_rows: 71'
+  │ 'Actual total_rows: 71'
+  └
+  ✓  total_rows must be increase 1!!!
+  ┌
+  │ 'Expected product_id: 13aa1333-ec04-4534-a9f7-e4840087
+  │ bb4f'
+  │ 'Actual product_id: 13aa1333-ec04-4534-a9f7-e4840087bb
+  │ 4f'
+  └
+  ✓  New product_id is 13aa1333-ec04-4534-a9f7-e4840087bb4f
+  ✓  New product_name is CL - Sản Phẩm KN68LbaNHk
+  ✓  New product's min_price is 17000
+  ✓  New product's max_price is 75000
+  ✓  Total product's variant is 2
+
+Attempting to set next request to check_product_detail
+
+↳ check_product_detail
+  GET http://dev-api.finan.cc/finan-product/api/v2/product/seller/get-detail/13aa1333-ec04-4534-a9f7-e4840087bb4f [200 OK, 3.55kB, 349ms]
+  ✓  Status code is 200
+  ┌
+  │ 'Expected product_id: 13aa1333-ec04-4534-a9f7-e4840087
+  │ bb4f'
+  │ 'Actual product_id: 13aa1333-ec04-4534-a9f7-e4840087bb
+  │ 4f'
+  └
+  ✓  New product_id is 13aa1333-ec04-4534-a9f7-e4840087bb4f
+  ✓  New product_name is CL - Sản Phẩm KN68LbaNHk
+  ✓  New product's min_price is 17000
+  ✓  New product's max_price is 75000
+  ✓  Total product's variant is 2
+  ┌
+  │ '--- End Testsuite 2 ---'
+  └
+
+┌─────────────────────────┬─────────────────────┬────────────────────┐
+│                         │            executed │             failed │
+├─────────────────────────┼─────────────────────┼────────────────────┤
+│              iterations │                   1 │                  0 │
+├─────────────────────────┼─────────────────────┼────────────────────┤
+│                requests │                   6 │                  0 │
+├─────────────────────────┼─────────────────────┼────────────────────┤
+│            test-scripts │                   6 │                  0 │
+├─────────────────────────┼─────────────────────┼────────────────────┤
+│      prerequest-scripts │                   5 │                  0 │
+├─────────────────────────┼─────────────────────┼────────────────────┤
+│              assertions │                  22 │                  0 │
+├─────────────────────────┴─────────────────────┴────────────────────┤
+│ total run duration: 4s                                             │
+├────────────────────────────────────────────────────────────────────┤
+│ total data received: 62.61kB (approx)                              │
+├────────────────────────────────────────────────────────────────────┤
+│ average response time: 308ms [min: 166ms, max: 509ms, s.d.: 111ms] │
+└────────────────────────────────────────────────────────────────────┘
+{"StatusCode":0,"StatusMessage":"success","code":0,"data":{},"msg":"success"}
